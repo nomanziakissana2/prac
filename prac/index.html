@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #cc {
+        width: 100%;
+        height: 10px;
+        border: 15px solid #ededed;
+        overflow: hidden;
+        background-color: red;
+        cursor: pointer;
+      }
+      #thing {
+        position: absolute;
+        top: 0px;
+        width: 15px;
+        height: 40px;
+        background-color: rgb(255, 207, 0);
+        top: 2%;
+        left: 50%;
+        /* border-radius: 50%; */
+        /* transform: translate3d(50%, 10px, 0); */
+      }
+    </style>
+  </head>
+  <body>
+    <div id="cc" onclick="showCoords(event)" ondragstart="showCoords(event)">
+      <div id="thing"></div>
+    </div>
+    <script>
+      var thething = document.getElementById('thing');
+      var c = document.getElementById('cc');
+
+      function showCoords(event) {
+        var x = event.clientX;
+        var y = 10;
+        var coords = 'X coords: ' + x + ', Y coords: ' + y;
+        var translate3D = 'translate3D(' + x + 'px,' + y + 'px, 0)';
+        thething.style.left = '0';
+        thething.style.top = '0px';
+        thething.style.transform = translate3D;
+      }
+      //   var thething = document.getElementById('thing');
+      //   var c = document.getElementById('cc');
+      //   //   c.addEventListener('click', getclick(e), false);
+      //   function getclick(e) {
+      //     var xP = e.clientX;
+      //     var yP = e.clientY;
+      //     var translate3D = 'translare3D(' + xP + 'px,' + yP + 'px, 0)';
+      //     thething.style.transform = translate3D;
+      //   }
+    </script>
+  </body>
+</html>
